@@ -1,0 +1,9 @@
+n=int(input()) 
+ 
+# taking n as a input 
+## write your code !!
+n1=int((str(n)[::-1]))
+if(n==n1):
+    print('true')
+else:
+    print('false')
