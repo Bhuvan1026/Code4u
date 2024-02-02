@@ -1,0 +1,6 @@
+def reverseBits(n):
+    
+    b1=format(n,'032b')
+    b2=b1[::-1]
+    s1=int(b2,2)
+    return s1
