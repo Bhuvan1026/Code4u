@@ -1,0 +1,12 @@
+from typing import List
+y=[]
+def printNos(x: int) -> List[int]:
+    # Write your code here
+    
+    if(x>0):
+        y.append(x)
+        printNos(x-1)
+
+    return y
+    
+        
