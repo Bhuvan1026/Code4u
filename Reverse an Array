@@ -1,0 +1,6 @@
+from typing import *
+
+def reverseArray(n: int, nums: List[int]) -> List[int]:
+    # Write your code here
+    a=reversed(nums)
+    return a
