@@ -1,0 +1,16 @@
+from typing import *
+
+def alternateNumbers(a : List[int]) -> List[int]:
+    # Write your code here.
+    p=[]
+    n=[]
+    for i in a:
+        if(i>0):
+            p.append(i)
+        else:
+            n.append(i)
+    b=[]
+    for i in range(len(a)//2):
+        b.append(p[i])
+        b.append(n[i])
+    return b
