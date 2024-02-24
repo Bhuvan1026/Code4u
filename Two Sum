@@ -1,0 +1,15 @@
+from itertools import permutations
+def read(n: int, book: [int], target: int) -> str:
+    # Write your code here.
+    a=permutations(book,2)
+    for i in a:
+        if(sum(list(i))==target):
+            x="YES"
+            return x
+    y="NO"
+    return y
+
+            
+        
+    
+
