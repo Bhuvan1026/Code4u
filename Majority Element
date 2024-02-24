@@ -1,0 +1,11 @@
+def majorityElement(v: [int]) -> int:
+    # Write your code here
+    x=list(set(v))
+    max=0
+    c=0
+    for i in x:
+        if max<v.count(i):
+            max=v.count(i)
+            c=i
+    return c
+
