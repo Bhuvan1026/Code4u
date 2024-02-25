@@ -1,0 +1,19 @@
+from typing import *
+
+def superiorElements(a : List[int]) -> List[int]:
+    # Write your code here.
+    pass
+    s=[]
+   
+    for i in range(len(a)):
+    
+        x=a[i]
+        b=a[(i+1):]
+        for j in range(len(b)):
+            if(x<b[j]):
+                break
+            if(x>b[j] and b[j]==b[-1]):
+                s.append(x)
+    s.append(a[-1])
+    s=sorted(list(set(s)))
+    return s
