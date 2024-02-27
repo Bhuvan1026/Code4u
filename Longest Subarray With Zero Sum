@@ -1,0 +1,13 @@
+from typing import *
+
+def getLongestZeroSumSubarrayLength(arr : List[int]) -> int:
+    # Write your code here.
+    length=0
+    maxi=0
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if(sum(arr[i:j])==0):
+                length=len(arr[i:j])
+                if(maxi<length):
+                    maxi=length
+    return maxi
