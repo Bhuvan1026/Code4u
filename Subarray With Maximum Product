@@ -1,0 +1,15 @@
+from typing import *
+import numpy as np
+
+
+def subarrayWithMaxProduct(arr : List[int]) -> int:
+    # Write your code here.
+    if(len(arr)==1):
+        return arr[0]
+    maxi=0
+    for i in range(len(arr)):
+        for j in range(i+1,len(arr)+1):
+            if(np.prod(arr[i:j])>maxi):
+                maxi=np.prod(arr[i:j])
+    return maxi
+            
