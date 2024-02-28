@@ -1,0 +1,17 @@
+from typing import *
+from math import factorial as fact
+
+def pascalTriangle(n : int) -> List[List[int]]:
+    # Write your code here.
+   
+    y=[]
+    for i in range(n):
+        #for j in range(n-i-1):
+        #    print(end=" ")
+        x=[]
+        for j in range(i+1):
+            a=(fact(i)/(fact(j)*(fact(i-j))))
+            x.append(int(a))
+        y.append(x)
+    return y
+        
