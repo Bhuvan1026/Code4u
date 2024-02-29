@@ -1,0 +1,13 @@
+def searchInsert(arr: [int], m: int) -> int:
+    # Write your code here.
+    
+    
+    for i in range(len(arr)):
+        if(arr[i]==m):
+            return i
+        if(arr[i]>m):
+            return i
+    return len(arr)
+        
+    
+    
