@@ -1,0 +1,8 @@
+def findKRotation(arr : [int]) -> int:
+mini=min(arr)
+    count=0
+    for i in arr:
+        if(i>mini):
+            count=count+1
+        else:
+            return count
