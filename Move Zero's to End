@@ -1,0 +1,17 @@
+def moveZeros(n: int,  a: [int]) -> [int]:
+    # Write your code here.
+    count=0
+    for i in range(len(a)):
+        if a[i]==0:
+           
+            count=count+1
+    for i in range(count):
+        a.remove(0)
+    x=[0]*count
+ 
+    a.extend(x)
+    return a
+    
+ 
+    
+    
