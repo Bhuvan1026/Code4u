@@ -1,0 +1,8 @@
+def search(arr, n, k):
+
+    # Write your code here
+    if k not in arr:
+        return -1
+    ins=arr.index(k)
+   
+    return ins
