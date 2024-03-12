@@ -1,0 +1,20 @@
+from sys import *
+from collections import *
+from math import *
+import copy
+
+def zeroMatrix(matrix, n, m):
+    # Write your code here.
+    x=copy.deepcopy(matrix)
+    
+    for i in range(len(x)):
+        for j in range(len(x[0])):
+        
+            if(matrix[i][j]==0):
+                for k in range(len(x[0])):
+                    x[i][k]=0
+                for l in range(len(x)):
+                    x[l][j]=0
+    return x
+
+    
