@@ -1,0 +1,8 @@
+import math
+def floorSqrt(n):
+   # write your code logic here .
+   x=math.sqrt(n)
+   y=math.floor(x)
+   return y
+n= int(input())
+print(floorSqrt(n))
