@@ -1,0 +1,17 @@
+
+    e=a
+    e.extend(b)
+    e.sort()
+
+
+
+    z=math.ceil(len(e)/2)
+
+    if(len(e)%2==0):
+        m1=(e[z]+e[z-1])/2
+    else:
+        m1=e[z-1]
+    return float(m1)
+    
+
+    
