@@ -1,0 +1,13 @@
+from typing import *
+
+def missingK(vec: List[int], n: int, k: int) -> int:
+    # Write your code here.
+    count=0
+    for i in range(1,max(vec)+k+1):
+        if i in vec:
+            pass
+        else:
+            count=count+1
+        if(count==k):
+            return i
+    
