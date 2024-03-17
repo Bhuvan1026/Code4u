@@ -1,0 +1,8 @@
+def kthElement(arr1: [int], n: int, arr2: [int], m: int, k: int) -> int:
+    # Write your code from here.
+
+    arr1.extend(arr2)
+    a=sorted(arr1)
+
+
+    return a[k-1]
