@@ -1,0 +1,32 @@
+# finding minimum of maximum counts
+# make use of pen to understand
+
+def is_valid(mid,arr,m):
+    student=1
+    Curr_books=0
+    for book in arr:
+        if Curr_books+book > mid :
+            Curr_books=book
+            student+=1
+        else:
+            Curr_books+=book
+    return student<=m
+
+def mini_pages(arr,m):
+    high=sum(arr)
+    low=max(arr)
+    while(low<high):
+        mid=(low+high)//2
+        if is_valid(mid,arr,m):
+            high=mid
+        else:
+            low=mid+1
+    return low
+
+def findPages(arr: [int], n: int, m: int) -> int:
+
+    # Write your code here
+    # Return the minimum number of pages
+    if(n<m):
+        return -1
+    return mini_pages(arr,m)
