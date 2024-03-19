@@ -1,0 +1,36 @@
+# finding minimum of all maximum values
+# make use of pen to understand a example
+
+import numpy as np
+
+def isvalid(mid,boards,k):
+    painter=1
+    curr_board_len=0
+    for board_len in boards:
+        if curr_board_len+board_len>mid:
+            painter=painter+1
+            curr_board_len=board_len
+        else:
+            curr_board_len+=board_len
+    return painter<=k
+        
+
+
+def min_time_paint(boards,k):
+    high=sum(boards)
+    low=max(boards)
+    
+    while(low < high):
+        mid=(high+low)//2
+        if isvalid(mid,boards,k):
+            high=mid
+        else:
+            low=mid+1
+    return low
+
+def findLargestMinDistance(boards:list, k:int):
+    # Write your code here
+    # Return an integer
+    return min_time_paint(boards,k)
+   
+    
