@@ -1,0 +1,8 @@
+def searchMatrix(mat: [[int]], target: int) -> bool:
+    # Write your code here.
+    for i in range(0,len(mat)):
+        for j in range(0,len(mat[0])):
+            if(mat[i][j]==target):
+                return True
+            
+    return False
