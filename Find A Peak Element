@@ -1,0 +1,7 @@
+def findPeakGrid(g: [[int]]) -> [int]:
+    # Write your code here.
+    x=[]
+    p=(max(g))
+    x.append(g.index(max(g)))
+    x.append(p.index(max(p)))
+    return x
