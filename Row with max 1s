@@ -1,0 +1,13 @@
+
+def rowWithMax1s(matrix: [[int]], n: int, m: int) -> int:
+    max_Count=0
+    ans=-1
+    for i in range(len(matrix)):
+        curr_count=0
+        for j in range(len(matrix[0])):
+            if(matrix[i][j]==1):
+                curr_count+=1
+        if max_Count< curr_count:
+            max_Count=curr_count
+            ans=i
+    return ans
