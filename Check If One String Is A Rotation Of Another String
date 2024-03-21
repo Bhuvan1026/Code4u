@@ -1,0 +1,8 @@
+def isCyclicRotation(p: str, q: str) -> int:
+    # Write your code here.
+    for i in range(len(p)):
+        x=p[len(p)-1]+p[0:len(p)-1]
+        if(x==q):
+            return 1
+        p=x
+    return 0
