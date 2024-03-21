@@ -1,0 +1,10 @@
+import math
+def median(matrix: [[int]], m: int, n: int) -> int:
+    # Write your code here.
+    x=[]
+    for i in range(len(matrix)):
+        x.extend(matrix[i])
+    x=sorted(x)
+
+    a=math.ceil((m*n)/2)
+    return x[a-1]
