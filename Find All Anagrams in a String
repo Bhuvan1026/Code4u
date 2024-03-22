@@ -1,0 +1,24 @@
+def findAnagramsIndices(str, ptr, n, m):
+    # Write your code here.
+    a=[]
+    xi=[]
+    pi=[]
+    for i in ptr:
+        pi.append(i)
+    #print(pi)
+    pi=sorted(pi)
+    j=0
+    while(j<n-m+1):
+        xi=[]
+        #print('j',j)
+        x=str[j:j+m]
+        
+        #print(x)
+        for i in x:
+            xi.append(i)
+        xi=sorted(xi)
+        #print(xi)
+        if xi==pi:
+            a.append(j)
+        j=j+1
+    return a
