@@ -1,0 +1,19 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+
+def minSubarraySum(arr, n, k):
+
+	# Write your code here
+
+	mini=9999999999
+	if(len(arr)==1):
+		return arr[0]
+	if(len(arr)==k):
+		return sum(arr)
+	for i in range(len(arr)-k):
+		if(sum(arr[i:i+k])<mini):
+			mini=sum(arr[i:i+k])
+	return mini
