@@ -1,0 +1,18 @@
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def checkPalindrome(s):
+    # Write your code here
+	# Return a boolean
+	x=s.lower()
+	p=' '
+	for i in x:
+		if i.isalnum():
+			p=p+i
+	p=p.strip()
+
+	if(p==p[::-1]):
+		return True
+	return False
