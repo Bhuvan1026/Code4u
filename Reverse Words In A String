@@ -1,0 +1,10 @@
+def reverseString(str: str) -> str:
+    # Write your code from here.
+    x=str.split(' ')
+    a=x[::-1]
+    s=''
+    for i in a:
+        s=s+i+ ' '
+    s=s.strip()
+    return s
+    
