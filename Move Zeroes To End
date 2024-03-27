@@ -1,0 +1,13 @@
+def pushZerosAtEnd(arr):
+    # write your code here
+    x=[]
+    count=0
+    for i in range(len(arr)):
+        if(arr[i]==0):
+            count=count+1
+            x.append(0)
+    for i in range(count):
+        arr.remove(0)
+    arr.extend(x)
+    return arr
+    
