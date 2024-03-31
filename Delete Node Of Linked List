@@ -1,0 +1,21 @@
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+# Please do not change code above.
+
+
+def deleteLast(list: Node) -> Node:
+    # Write your code here
+    if list is None or list.next==None:
+        return None
+    
+    current=list
+    while current.next.next!=None:
+        current=current.next
+
+    current.next=None
+    return list
+
