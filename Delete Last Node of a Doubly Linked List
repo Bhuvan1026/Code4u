@@ -1,0 +1,19 @@
+class Node:
+    def __init__(self, data=0, next=None, prev=None):
+        self.data = data
+        self.next = next
+        self.prev = prev
+
+
+# Do not change code above.
+
+
+def deleteLastNode(head: Node) -> Node:
+    # Write your code here
+    if head==None or head.next==None:
+        return None
+    current=head
+    while(head.next.next!=None):
+        head=head.next
+    head.next=None
+    return current
