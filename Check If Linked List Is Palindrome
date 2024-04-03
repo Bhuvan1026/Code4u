@@ -1,0 +1,28 @@
+'''
+Following is the structure of the Node class already defined.
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+'''
+
+def isPalindrome(head):
+    # write your code here
+    s=''
+    x=[]
+    current=head
+    while(current):
+        x.append(current.data)
+        current=current.next
+    j=-1
+    for i in range(len(x)//2):
+        if(x[i]!=x[j]):
+            return False
+        j=j-1
+    return True
+
+
+
+ 
