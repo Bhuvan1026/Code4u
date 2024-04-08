@@ -1,0 +1,32 @@
+'''
+Following is the structure of the Node class already defined:
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+
+def segregateEvenOdd(head):
+    # Write your code here
+    if not head or not head.next:
+        return None
+    even_head=Node(0)
+    odd_head=Node(0)
+    even_tail=even_head
+    odd_tail=odd_head
+    while(head):
+        if head.data%2==0:
+            even_tail.next=head
+            even_tail=even_tail.next
+        else:
+            odd_tail.next=head
+            odd_tail=odd_tail.next
+        head=head.next
+    even_tail.next=odd_head.next
+    odd_tail.next=None
+    return even_head.next
+    
+        
+           
