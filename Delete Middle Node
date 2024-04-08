@@ -1,0 +1,43 @@
+'''
+Following is the structure of the Node class already defined:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+'''
+import math
+def leni_node(head):
+    count=0
+    while(head):
+        count=count+1
+        head=head.next  
+    return count
+
+def deleteMiddle(head):
+    # Write your code here.
+    leni=leni_node(head)
+    if(leni==1):
+        return None
+    
+    current=head
+    count=1
+    if leni%2==0:
+        y=(leni//2)+1
+       
+        while(current and count<y-1 ):
+            current=current.next
+            count=count+1
+
+        current.next=current.next.next
+        return head
+    else:
+        z=math.ceil(leni/2)
+        while(current and count<z-1):
+            current=current.next
+            count=count+1
+
+        current.next=current.next.next
+        return head
+    
