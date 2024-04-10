@@ -1,0 +1,39 @@
+class Node:
+    def __init__(self, data=0, next=None):
+        self.data = data
+        self.next = next
+
+
+# Don't change the code above.
+
+
+def addTwoNumbers(head1: Node, head2: Node) -> Node:
+    # Write your code here.
+    x1=[]
+    x2=[]
+    s1=''
+    s2=''
+    while(head1):
+        x1.append(head1.data)
+        head1=head1.next
+    for i in range(len(x1)):
+        s1=s1+str(x1[i])
+    s1=s1[::-1]
+    while(head2):
+        x2.append(head2.data)
+        head2=head2.next
+    for i in range(len(x2)):
+        s2=s2+str(x2[i])
+    s2=s2[::-1]
+    s3=int(s1)+int(s2)
+    s3=str(s3)
+    s3=s3[::-1]
+
+    newnode=Node(s3[0])
+    dummy=newnode
+    for i in range(1,len(s3)):
+        temp=Node(s3[i])
+        newnode.next=temp
+        newnode=newnode.next
+    newnode.next=None
+    return dummy
