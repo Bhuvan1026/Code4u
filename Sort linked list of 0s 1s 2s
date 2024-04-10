@@ -1,0 +1,26 @@
+'''
+Following is the structure of the Node class already defined:
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+
+def sortList(head):
+    # Write your code here.
+    arr=[]
+    temp=head
+    while(temp!=None):
+        arr.append(temp.data)
+        temp=temp.next
+    arr.sort()
+
+    i=0
+    temp=head
+    while(temp!=None):
+        temp.data=arr[i]
+        temp=temp.next
+        i=i+1
+    return head
