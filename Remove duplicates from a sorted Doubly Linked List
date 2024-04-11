@@ -1,0 +1,31 @@
+class Node:
+    def __init__(self, data=0, next=None, prev=None):
+        self.data = data
+        self.next = next
+        self.prev = prev
+
+
+# Don't change the code above.
+
+
+def removeDuplicates(head: Node) -> Node:
+    # Write your code here
+    current=head
+    while(current):
+        if(current==head):
+            pass
+
+        elif(current.prev.data==current.data and current.next==None ):
+            current.prev.next=None
+             
+
+        elif(current.prev.data==current.data ):
+            #current.prev.next=current.next
+            #current.next.prev=current.prev
+            temp=current.next
+            temp.prev=current.prev
+            current.prev.next=temp
+        current=current.next
+    return head
+        
+
