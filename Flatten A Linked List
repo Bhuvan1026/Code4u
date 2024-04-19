@@ -1,0 +1,36 @@
+class Node:
+    def __init__(self, val=0, next=None, child=None):
+        self.data = val
+        self.next = next
+        self.child = child
+
+
+# Don't change the code above.
+
+
+def flattenLinkedList(head: Node) -> Node:
+    # Write your code here
+    x=[]
+    temp2=head
+
+    while(temp2):
+        temp=temp2
+        #x.append(temp.data)
+      
+        while(temp):
+            
+            x.append(temp.data)
+            temp=temp.child
+        
+       
+
+        temp2=temp2.next
+    x.sort()
+
+    h1=Node(x[0])
+    t1=h1
+    for i in range(1,len(x)):
+        nn=Node(x[i])
+        t1.child=nn
+        t1=nn
+    return h1
