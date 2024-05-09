@@ -1,0 +1,14 @@
+
+from typing import List
+
+class Solution:
+    def reverse(self,St): 
+        #code here
+        a=[]
+        while(St):
+            a.append(St.pop())
+        
+        for i in a:
+            St.append(i)
+        return St
+
