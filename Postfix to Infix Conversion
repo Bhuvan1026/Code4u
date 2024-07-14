@@ -1,0 +1,17 @@
+class Solution:
+    def __init__(self):
+        self.stack=[]
+    def is_operand(self,c):
+        return c in '/*+-^'
+    def postToInfix(self, postfix):
+        # Code here
+        for i in range(len(postfix)):
+            if not self.is_operand(postfix[i]):
+                self.stack.append(postfix[i])
+            else:
+                op2=self.stack.pop()
+                op1=self.stack.pop()
+                op=postfix[i]
+                exp='('+op1+op+op2+')'
+                self.stack.append(exp)
+        return self.stack[-1]
