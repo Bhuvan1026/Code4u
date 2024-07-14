@@ -1,0 +1,17 @@
+class Solution:
+    def __init__(self):
+        self.stack=[]
+    def is_operand(self,c):
+        return c in '/*+-^'
+    def postToPre(self, post_exp):
+        # Code here
+        for i in range(len(post_exp)):
+            if not self.is_operand(post_exp[i]):
+                self.stack.append(post_exp[i])
+            else:
+                op2=self.stack.pop()
+                op1=self.stack.pop()
+                op=post_exp[i]
+                exp=op+op1+op2
+                self.stack.append(exp)
+        return self.stack[-1]
