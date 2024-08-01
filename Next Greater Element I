@@ -1,0 +1,16 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        x=[-1]*len(nums1)
+        for i in range(len(nums1)):
+            if nums1[i] in nums2:
+                a=nums2.index(nums1[i])
+                z=0
+                for j in range(a+1,len(nums2)):
+                    if nums2[j]>nums2[a]:
+                        x[i]=nums2[j]
+                        # z=nums2.index(i)
+                        break
+                
+                # if a < len(nums2)-1 and nums2[a]<max(nums2[a+1:]):
+                #     x[nums1.index(nums1[i])]=z
+        return x
