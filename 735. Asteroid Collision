@@ -1,0 +1,43 @@
+# from queue import LifoQueue
+
+# class Solution:
+
+#     def __init__(self):
+#         self.list=LifoQueue()
+#     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+#         for i in range(len(asteroids)):
+#             if asteroids[i]>0:
+#                 self.list.put(asteroids[i])
+#             while(not self.list.empty() and self.list.queue[-1]<abs(asteroids[i]) and self.list.queue[-1]>0 ):
+#                 self.list.get()
+#             if not self.list.empty() and self.list.queue[-1]==abs(asteroids[i]):
+#                 self.list.get()
+#             elif self.list.empty() or self.list.queue[-1]<0:
+#                 self.list.put(asteroids[i])
+#         return list(self.list.queue)
+
+from typing import List
+
+class Solution:
+
+    def __init__(self):
+        self.stack = []  # Use a list as a stack
+
+    def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+        for asteroid in asteroids:
+            # Handle the case where the asteroid is moving to the right
+            if asteroid > 0:
+                self.stack.append(asteroid)
+            else:
+                # Handle collisions with asteroids moving to the left
+                while self.stack and self.stack[-1] > 0 and self.stack[-1] < abs(asteroid):
+                    self.stack.pop()
+                
+                # Check if the stack is not empty and the top of the stack is the same size as the incoming asteroid
+                if self.stack and self.stack[-1] == abs(asteroid):
+                    self.stack.pop()
+                elif not self.stack or self.stack[-1] < 0:
+                    self.stack.append(asteroid)
+
+        return self.stack
+        
