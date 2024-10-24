@@ -1,0 +1,26 @@
+class Meeting:
+    def __init__(self,start,end,pos):
+        self.start=start
+        self.end=end
+        self.pos=pos
+class Solution:
+    
+    #Function to find the maximum number of meetings that can
+    #be performed in a meeting room.
+
+    def maximumMeetings(self,start,end):
+        # code here
+        x=[]
+        for i in range(len(start)):
+            x.append(Meeting(start[i],end[i],i+1))
+        sorted(x,key=lambda x:(x.end,x.pos))
+        ans=0
+        lastend=x[0].end
+        ans+=1
+        for i in range(1,len(start)):
+            if x[i].start>lastend:
+                lastend=x[i].end
+                ans+=1
+            
+        return ans
+        
