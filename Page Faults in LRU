@@ -1,0 +1,43 @@
+#User function Template for python3
+from collections import deque
+class Solution:
+    def pageFaults(self, N, C, pages):
+        # code here
+        x=[]
+        queue=deque(x)
+        pagefault=0
+        for i in range(len(pages)):
+            if (len(queue)!=C) and pages[i] not in queue:
+                queue.append(pages[i])
+                pagefault+=1
+            elif pages[i] not in queue:
+                queue.append(pages[i])
+                queue.popleft()
+                pagefault+=1
+            else:
+                #if element is present remove it and append again 
+                queue.remove(pages[i])
+                queue.append(pages[i])
+        return pagefault
+            
+            
+                
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__': 
+    t = int (input ())
+    for _ in range (t):
+        N = int(input())
+        pages = input().split()
+        for itr in range(N):
+            pages[itr] = int(pages[itr])
+        C = int(input())
+
+        ob = Solution()
+        print(ob.pageFaults(N, C, pages))
+
+# } Driver Code Ends
